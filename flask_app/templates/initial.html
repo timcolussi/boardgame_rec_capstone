@@ -1,0 +1,21 @@
+<!doctype html>
+<title>Boardgame Recommendations</title>
+<link rel=stylesheet type=text/css>
+<div class=page>
+  <br>
+  {% block body %}
+    <form name="passdata" action="." method="post">
+      <fieldset>
+        <p>
+          <label for="fav_game">Choose a game:</label>
+          <select id = "fav_game" name="fav_game">
+            {% for game in list %}
+              <option value = {{game}}>{{game}}</option>
+            {% endfor %}
+          </select>
+          <input type="submit" value="Submit">
+        </p>
+      </fieldset>
+    </form>
+  {% endblock %}
+</div>

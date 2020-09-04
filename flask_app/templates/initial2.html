@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<link href="src/selectstyle.css" rel="stylesheet">
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script src="src/selectstyle.js"></script>
+    <head>
+        <html lang="en" dir="ltr">
+        <meta charset="utf-8">
+        <title>Welcome</title> 
+        <style type="text/css">    
+          body
+          {
+            border: 2px solid black;
+            padding: 25px;
+            background: ("boardgames.jpg");
+            background-repeat: repeat;
+            background-size: 2000px 2000px;        } 
+        </style>
+    </head>
+
+    <body>
+        {% extends "template.html" %}
+        {% block content %}
+        <h1>Please select a game </h1>
+        <form action="{{ url_for('getvalues_and_recommend') }}" method="POST">
+                <p>
+                    <label>Choose a game:
+                    <select name="fav_game" theme="google" placeholder="Select Your Favorite" data-search="true">
+                        {% for game in list %}
+                            <option value = {{game}}>{{game}}</option>
+                        {% endfor %}
+                    </select>
+                    </label>
+                    <input type="submit" value="Submit">
+                </p>
+        </form>
+        {% endblock %}
+    </body>
+</html>

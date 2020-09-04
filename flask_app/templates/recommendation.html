@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+    <head>
+        <html lang="en" dir="ltr">
+        <meta charset="utf-8">
+        <title>Recommendations</title>  
+    </head>
+
+    <body bgcolor="Lavender">
+        {% extends "template.html" %}
+            {% for table in tables %}
+                {{ table|safe }}
+            {% endfor %}
+    </body>
+</html>
