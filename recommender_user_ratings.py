@@ -186,7 +186,7 @@ def parse_args():
     parser = argparse.ArgumentParser(
         prog="Game Recommender",
         description="Run KNN Game Recommender")
-    parser.add_argument('--path', nargs='?', default='C:/Users/timco/Documents/NYCDSA/capstone/boardgame_rec_capstone/',
+    parser.add_argument('--path', nargs='?', default='C:/Users/timco/Documents/NYCDSA/capstone/boardgame_rec_capstone',
                         help='input data path')
     parser.add_argument('--games_filename', nargs='?', default='games_list.csv',
                         help='provide movies filename')

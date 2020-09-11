@@ -72,7 +72,10 @@ def getvalues_and_recommend():
 		results = make_recommendation(model_knn=model_knn,
 			data=sparse_matrix, mapper=mapper, fav_game=fav_game, n_recommendations=10)
 		res_df = pd.DataFrame(results)
-		return render_template('recommendation2.html', table=res_df.to_html()) 
+		# res_table = [results]
+		# table = ItemTable(res_table)
+		return render_template('recommendation2.html', table=res_df.to_html(index=False, justify='center'))
+		# return render_template('recommendation2.html', table=table) 
 
 if __name__ == '__main__':
 	app.run(debug=True)
